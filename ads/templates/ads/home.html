@@ -1,0 +1,28 @@
+{% load static %} 
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Adverts</title>
+</head>
+<body>
+	<h1>Thomas Sampling Ads</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<img src="{{ad.image.url}}" alt="" class="img-fluid">
+			</div>
+
+			<div class="col-4">
+					<a class="btn btn-small btn-primary" href="{% url 'like-ad' ad.id %}">Like</a>
+					<a class="btn btn-small btn-danger" href="{% url 'dislike-ad' ad.id %}">Dislike</a>
+					<br/>Indexes of ads that has been shown to different users - {{ selected }}
+					<br> Reward 1 : {{ numb1 }}
+					<br> Reward 0 : {{ numb0 }}
+					<br> Clicks as seen in db : {{ clicks }}
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
